@@ -7,9 +7,9 @@ hoganify-lite
 inspired by [hbsfy](https://github.com/epeli/node-hbsfy).
 
 Compiles Mustache templates to CommonJS modules. The compiled templates
-only have one copy of the Hogan.js 'Template' object. It doesn't include
-the Hogan compiler. This is the main difference with 
-[hoganify](https://github.com/eliksir/hoganify).
+only have one copy of the Hogan.Template object. It doesn't include the
+Hogan compiler (this is the main difference with 
+[hoganify](https://github.com/eliksir/hoganify)).
 
 Usage
 -----
