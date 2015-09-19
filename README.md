@@ -1,5 +1,5 @@
-hoganify
-========
+hoganify-lite
+=============
 
 [Mustache](http://mustache.github.io/) precompiler transform plugin for
 [Browserify](https://github.com/substack/node-browserify), using
@@ -7,7 +7,9 @@ hoganify
 inspired by [hbsfy](https://github.com/epeli/node-hbsfy).
 
 Compiles Mustache templates to CommonJS modules. The compiled templates
-only have one copy of the Hogan.js compiler.
+only have one copy of the Hogan.js 'Template' object. It doesn't include
+the Hogan compiler. This is the main difference with 
+[hoganify](https://github.com/eliksir/hoganify).
 
 Usage
 -----
@@ -16,9 +18,9 @@ Install hoganify locally to your project:
 
     npm install --save hoganify
 
-You will also need Hogan.js installed:
+You will also need hogan-template installed:
 
-    npm install --save hogan.js
+    npm install --save hogan-template
 
 Then use it as Browserify transform module with `-t`:
 
@@ -42,19 +44,6 @@ or `.ms` extensions:
 Options
 -------
 
-By default templates are precompiled, but a `--live` option can be
-supplied to compile templates at runtime:
-
-    browserify -t [ hoganify --live ] main.js > bundle.js
-
-Or again, through grunt-browserify:
-
-    browserify: {
-      options: {
-        transform: [['hoganify', { live: true }]]
-      }
-    }
-
 If you want to support other extensions than the default ones, you can use the
 `--ext` option with one or more comma separated extensions:
 
@@ -67,19 +56,3 @@ Or similarly in grunt-browserify:
         transform: [['hoganify', { ext: '.html,.hg' }]]
       }
     }
-
-Changelog
----------
-
-### 0.2.0
-
-- Support for `--ext` option
-
-### 0.1.1
-
--   Minor README update
-
-### 0.1.0
-
--   Initial release
-
