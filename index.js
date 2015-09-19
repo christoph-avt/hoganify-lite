@@ -28,8 +28,8 @@ module.exports = function hoganify (file, options) {
     var template = null,
         compiled = '';
 
-    // Require the Hogan without the compiler
-    compiled += 'var Template = require("hogan-template");\n';
+    // Require Hogan.Template
+    compiled += 'var Template = require("hogan.js/lib/template.js");\n';
 
     // Compile the template as string.
     template = Hogan.compile(buffer, { asString: true });

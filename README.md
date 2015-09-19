@@ -18,9 +18,9 @@ Install hoganify locally to your project:
 
     npm install --save hoganify
 
-You will also need hogan-template installed:
+You will also need hogan.js installed:
 
-    npm install --save hogan-template
+    npm install --save hogan.js
 
 Then use it as Browserify transform module with `-t`:
 
